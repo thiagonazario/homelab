@@ -1,0 +1,20 @@
+# Este arquivo contém as ustomizações do Helm para otimizar a implantação
+# do kube-prometheus-stack em ambientes de recursos limitados (Minikube).
+#
+# A implantação foi realizada com o comando:
+# helm install prometheus prometheus-community/kube-prometheus-stack -f ./helm/custom-values.yaml
+
+# Desativa a importação dos dashboards padrão do Grafana para acelerar a inicialização
+grafana:
+  defaultDashboards:
+    enabled: false
+
+# Desativa o Alertmanager, que consumia muitos recursos e não era necessário
+# para a coleta inicial.
+alertmanager:
+  enabled: false
+
+# Estabilizando o Prometheus em ambientes de baixo recurso.
+prometheus:
+  prometheusSpec:
+    replicaExternalLabelName: true
