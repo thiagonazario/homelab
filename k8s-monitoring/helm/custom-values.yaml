@@ -1,4 +1,4 @@
-# Este arquivo contém as ustomizações do Helm para otimizar a implantação
+# Este arquivo contém as customizações do Helm para otimizar a implantação
 # do kube-prometheus-stack em ambientes de recursos limitados (Minikube).
 #
 # A implantação foi realizada com o comando:
