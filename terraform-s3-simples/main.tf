@@ -1,0 +1,25 @@
+# 1. Configuração do Terraform e Provider AWS
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+provider "aws" {
+  # Use a região configurada no aws configure
+  region = "us-east-1" 
+}
+
+# 2. Definição do Recurso (O S3 Bucket)
+resource "aws_s3_bucket" "meu_primeiro_bucket" {
+  # MUDE ESTA LINHA: Nome deve ser ÚNICO, ex: "seu-nome-lab-2025-bucket"
+  bucket = "terraform-s3-simples-bucket-6666" 
+
+  tags = {
+    Name        = "Primeiro Lab Terraform"
+    Ambiente    = "Dev"
+  }
+}
