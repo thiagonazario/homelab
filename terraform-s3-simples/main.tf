@@ -15,7 +15,7 @@ provider "aws" {
 
 # 2. Definição do Recurso (O S3 Bucket)
 resource "aws_s3_bucket" "meu_primeiro_bucket" {
-  # MUDE ESTA LINHA: Nome deve ser ÚNICO, ex: "seu-nome-lab-2025-bucket"
+  # nome único para o bucket"
   bucket = "terraform-s3-simples-bucket-6666" 
 
   tags = {
