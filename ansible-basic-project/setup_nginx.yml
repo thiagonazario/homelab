@@ -1,0 +1,19 @@
+---
+- name: Configurar e garantir Nginx em servidores web
+  hosts: servidores_web
+  become: yes
+  tasks:
+    - name: atualizar o cache de pacotes
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: instalar o nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: garantir que o nginx esteja rodando
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
