@@ -1,0 +1,6 @@
+# Igonorar arquivos do Terraform que contêm senhas ou estados locais
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.pem
+*.key
