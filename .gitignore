@@ -4,3 +4,13 @@
 *.tfstate.backup
 *.pem
 *.key
+
+# Ignorar arquivos de variáveis que podem conter senhas
+*.tfvars
+*.tfvars.json
+
+# Ignorar logs de erro do Terraform
+crash.log
+
+# Ignorar arquivos de chave do OCI (comuns no seu roadmap)
+*.pub
